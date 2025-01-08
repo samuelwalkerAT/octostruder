@@ -67,6 +67,22 @@ additional_setup_parameters = {"python_requires": ">=3,<4"}
 ########################################################################################################################
 
 
+setup(
+    name="OctoStruder",
+    version="0.1.0",
+    description="OctoPrint plugin for managing additional extruders",
+    author="Samuel Walker",
+    url="https://github.com/samuelwalkerAT/octostruder",
+    license="AGPLv3",
+    packages=["octostruder"],
+    install_requires=[],
+    entry_points={
+        "octoprint.plugin": [
+            "octostruder = octostruder"
+        ]
+    },
+)
+
 try:
     import octoprint_setuptools
 except:
