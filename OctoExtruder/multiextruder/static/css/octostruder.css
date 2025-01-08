@@ -1,0 +1,91 @@
+/* TODO: Have your plugin's CSS files generated to here. */
+/* General container styling for the plugin */
+#extruder_manager {
+    padding: 10px;
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Headings */
+#extruder_manager h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#extruder_manager h4 {
+    color: #555;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* List of existing extruders */
+#extruder_manager ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#extruder_manager ul li {
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #fff; /* White background for items */
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#extruder_manager ul li button {
+    padding: 5px 10px;
+    background-color: #dc3545; /* Red button */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#extruder_manager ul li button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Form for adding a new extruder */
+#extruder_manager label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#extruder_manager input, #extruder_manager select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Buttons */
+#extruder_manager button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#extruder_manager button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Configuration sections (GPIO and G-code) */
+#extruder_manager div[data-bind="if: newExtruderType() === 'gpio'] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e9e
