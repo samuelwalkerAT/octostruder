@@ -1,0 +1,45 @@
+<!-- Container for the Extruder Manager -->
+<div id="extruder_manager" data-bind="visible: loginState.isAdmin">
+    <h2>Extruder Manager</h2>
+
+    <!-- List of existing extruders -->
+    <div>
+        <h3>Existing Extruders</h3>
+        <ul data-bind="foreach: extruders">
+            <li>
+                <strong data-bind="text: name"></strong> - Type: <span data-bind="text: type"></span>
+                <button data-bind="click: $parent.removeExtruder">Remove</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Form to add a new extruder -->
+    <div>
+        <h3>Add a New Extruder</h3>
+        <label>Name: <input type="text" data-bind="value: newExtruderConfig().name" /></label><br />
+        <label>Type: 
+            <select data-bind="value: newExtruderType">
+                <option value="">-- Select Type --</option>
+                <option value="gpio">GPIO</option>
+                <option value="gcode">G-code</option>
+            </select>
+        </label><br />
+
+        <!-- GPIO Configuration -->
+        <div data-bind="if: newExtruderType() === 'gpio'">
+            <h4>GPIO Configuration</h4>
+            <label>Step Pin: <input type="text" data-bind="value: newExtruderConfig().gpioConfig.stepPin" /></label><br />
+            <label>Direction Pin: <input type="text" data-bind="value: newExtruderConfig().gpioConfig.directionPin" /></label><br />
+            <label>Enable Pin: <input type="text" data-bind="value: newExtruderConfig().gpioConfig.enablePin" /></label><br />
+        </div>
+
+        <!-- G-code Configuration -->
+        <div data-bind="if: newExtruderType() === 'gcode'">
+            <h4>G-code Configuration</h4>
+            <label>Command: <input type="text" data-bind="value: newExtruderConfig().gcodeConfig.command" /></label><br />
+            <label>Parameters: <input type="text" data-bind="value: newExtruderConfig().gcodeConfig.parameters" /></label><br />
+        </div>
+
+        <button data-bind="click: addExtruder">Add Extruder</button>
+    </div>
+</div>
