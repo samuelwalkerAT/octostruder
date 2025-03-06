@@ -8,7 +8,7 @@ from setuptools import setup
 plugin_identifier = "octostruder"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "multiextruder"
+plugin_package = "octostruder"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
@@ -66,6 +66,22 @@ additional_setup_parameters = {"python_requires": ">=3,<4"}
 
 ########################################################################################################################
 
+
+setup(
+    name="OctoStruder",
+    version="0.1.0",
+    description="OctoPrint plugin for managing additional extruders",
+    author="Samuel Walker",
+    url="https://github.com/samuelwalkerAT/octostruder",
+    license="AGPLv3",
+    packages=["octostruder"],
+    install_requires=[],
+    entry_points={
+        "octoprint.plugin": [
+            "octostruder = octostruder"
+        ]
+    },
+)
 
 try:
     import octoprint_setuptools
