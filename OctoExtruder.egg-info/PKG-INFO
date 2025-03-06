@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: OctoExtruder
+Version: 0.1.0
+Summary: add extra extruders to printer using raspberry pi gpio or Gcode commands
+Home-page: https://github.com/samuelwalkerAT/OctoExtruder
+Author: Samuel Maurice Walker
+Author-email: Samuelwalkerat@gmail.com
+License: AGPLv3
+Requires-Python: >=3,<4
+Requires-Dist: OctoPrint

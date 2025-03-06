@@ -16,7 +16,13 @@
     font-size: 18px;
 }
 
-/* List of active extruders */
+#extruder_manager h4 {
+    color: #555;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* List of existing extruders */
 #extruder_manager ul {
     list-style-type: none;
     padding: 0;
@@ -34,21 +40,7 @@
     align-items: center;
 }
 
-#extruder_manager ul li .extruder-info {
-    flex-grow: 1;
-}
-
-#extruder_manager ul li .extruder-controls {
-    display: flex;
-    align-items: center;
-}
-
-#extruder_manager ul li .extruder-controls select,
-#extruder_manager ul li .extruder-controls input {
-    margin-right: 10px;
-}
-
-#extruder_manager ul li .extruder-controls button {
+#extruder_manager ul li button {
     padding: 5px 10px;
     background-color: #dc3545; /* Red button */
     color: white;
@@ -57,11 +49,11 @@
     cursor: pointer;
 }
 
-#extruder_manager ul li .extruder-controls button:hover {
+#extruder_manager ul li button:hover {
     background-color: #c82333; /* Darker red on hover */
 }
 
-/* Form elements */
+/* Form for adding a new extruder */
 #extruder_manager label {
     display: block;
     margin-bottom: 5px;
@@ -91,3 +83,9 @@
 #extruder_manager button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
+
+/* Configuration sections (GPIO and G-code) */
+#extruder_manager div[data-bind="if: newExtruderType() === 'gpio'] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e9e
